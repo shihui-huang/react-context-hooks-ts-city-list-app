@@ -1,0 +1,73 @@
+.switch {
+  display: inline-block;
+  align-self: center;
+}
+
+.cityData {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.info {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  width: calc(100% - 50px);
+  display: inline-block;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.city {
+  width: 350px;
+  height: 100%;
+  :global(.ant-divider-horizontal) {
+    margin: 0;
+  }
+}
+
+.data {
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10px;
+}
+
+.dataLine {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.number {
+  padding-right: 2px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.unit {
+  font-weight: 600;
+}
+
+.coverPhoto {
+  width: 350px;
+  height: 136px;
+  object-fit: cover;
+}

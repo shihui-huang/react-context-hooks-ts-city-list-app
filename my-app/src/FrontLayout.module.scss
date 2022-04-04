@@ -1,0 +1,90 @@
+.layout {
+  padding: 96px calc((100% - 1082px) / 2);
+
+  :global(.ant-layout-header) {
+    background: none;
+    height: initial;
+    padding: 0;
+    font-size: 25px;
+    font-weight: 200;
+    display: flex;
+    justify-content: space-between;
+    height: 112px;
+    line-height: 112px;
+  }
+
+  :global(.ant-btn) {
+    padding: 2px 9px;
+    align-self: center;
+    background-color: #6ed091;
+    height: initial;
+    border-radius: 4px;
+    &:focus,
+    :hover {
+      background-color: #6ed091;
+      color: none;
+      border: none;
+    }
+    & > span {
+      font-size: 10px;
+      color: white;
+      font-weight: 800;
+    }
+  }
+
+  :global(.ant-card-bordered) {
+    box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 10%);
+  }
+
+  :global(.ant-card-body) {
+    padding: 0px;
+  }
+}
+
+:global(.ant-switch) {
+  min-width: 30px;
+  height: 11px;
+  line-height: 11px;
+  width: 30px;
+  background-color: #c6c5c5;
+}
+
+:global(.ant-switch-handle) {
+  width: 16px;
+  height: 16px;
+  top: -3px;
+}
+
+:global(.ant-switch-checked) {
+  background-color: #b6e7c8;
+}
+
+:global(.ant-switch-checked .ant-switch-handle::before) {
+  background-color: #6ed091;
+  box-shadow: -1px 1px 1px 0px rgb(0 35 11 / 20%);
+}
+
+:global(.ant-switch-checked .ant-switch-handle) {
+  left: calc(100% - 14px);
+}
+
+:global(.ant-switch-handle) {
+  left: -1px;
+  box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 10%);
+}
+
+:global(.ant-switch-handle)::before {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 1200px) {
+  .layout {
+    padding: 96px calc((100% - 716px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 96px calc((100% - 350px) / 2);
+  }
+}

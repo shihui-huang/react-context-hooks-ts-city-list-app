@@ -1,9 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Card, Col, Row, Button, Switch, Divider} from "antd";
-import styles from './City.module.css'
+import { Card, Switch, Divider} from "antd";
+import styles from './City.module.scss'
 
-function City(){
+interface Props {
+  destination : {
+    nbHotel: number;
+    nbResident: number;
+    nbSalaryMoy: number;
+    nbSurface: number;
+    activated: boolean;
+    address: string;
+    imageLink: string;
+    name: string;
+  }
+}
+
+function City({ destination }:Props){
   const [disabled, setDisabled] = React.useState(false);
 
   const toggle = () => {
@@ -13,52 +25,48 @@ function City(){
 return (
   <Card className={styles.city}
         hoverable
-        style={{ width: 350 }}
-        cover={<img style={{width: 350, height:136}} alt="example" src="https://source.unsplash.com/random/?city,paris" />}
+        cover={<img className={styles.coverPhoto} alt="destination" src={`https://source.unsplash.com/random/?city,${destination.name}`} />}
       >
         <div className={styles.info}>
           <div className={styles.text}>
-            <div className={styles.title}> Europe Street beat</div> 
-            <div className={styles.description}> www.instagram.com</div> 
+            <div className={styles.title}> {destination.name}</div> 
+            <div className={styles.description}> {destination.address}</div> 
           </div>
           <div className={styles.switch}>
-          <Switch onClick={toggle} disabled={disabled} defaultChecked></Switch>
+          <Switch onClick={toggle} defaultChecked={destination.activated}></Switch>
           </div>
         </div>
-        <Divider style={{}}/>
+        <Divider />
         <div className={styles.cityData}>
           <div className={styles.data}>
             <div className={styles.dataLine}>
-              <span className={styles.number}>3.4</span>
+              <span className={styles.number}>{ Number(destination.nbResident).toLocaleString('fr-FR')}</span>
               <span className={styles.unit}>M</span>
             </div>
             <div className={styles.dataLine}>Habitants</div>
           </div>
           <div className={styles.data}>
             <div className={styles.dataLine}>
-              <span className={styles.number}>3.4</span>
-              <span className={styles.unit}>M</span>
+              <span className={styles.number}>{ Number(destination.nbHotel).toLocaleString('fr-FR')} </span>
             </div>
             <div className={styles.dataLine}>Hôtels</div>
           </div>
           <div className={styles.data}>
             <div className={styles.dataLine}>
-              <span className={styles.number}>3.4</span>
-              <span className={styles.unit}>M</span>
+              <span className={styles.number}>{ Number(destination.nbSalaryMoy).toLocaleString('fr-FR')} </span>
+              <span className={styles.unit}>€</span>
             </div>
             <div className={styles.dataLine}>Revenu Moy</div>
           </div>
           <div className={styles.data}>
             <div className={styles.dataLine}>
-              <span className={styles.number}>3.4</span>
-              <span className={styles.unit}>M</span>
+              <span className={styles.number}>{ Number(destination.nbSurface).toLocaleString('fr-FR')} </span>
             </div>
             <div className={styles.dataLine}>km²</div>
           </div>
-
         </div>
         </Card>
-)
+  )
 }
 
 export default City

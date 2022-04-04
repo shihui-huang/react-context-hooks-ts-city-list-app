@@ -1,0 +1,89 @@
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cityModal {
+  width: 475px !important;
+
+  :global(.ant-modal-close-x) {
+    display: none;
+  }
+
+  :global(.ant-modal-body) {
+    padding: 16px 16px 12px 16px;
+  }
+
+  :global(.ant-input) {
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    background: #f3f3f3;
+    border: none;
+  }
+
+  :global(.ant-input:placeholder-shown) {
+    font-size: 10px;
+    color: #9e9e9e;
+  }
+
+  :global(.ant-modal) {
+    width: 474px !important;
+  }
+
+  :global(.ant-input-status-error) {
+    background: #f3f3f3 !important;
+  }
+}
+
+.numberInput {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numberInput {
+  :global(.ant-form-item:not(:last-child)) :global(.ant-form-item-control) {
+    padding-right: 10px;
+  }
+
+  :global(.ant-form-item) {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+}
+
+.switch {
+  :global(.ant-form-item-label) {
+    left: 57px;
+    position: absolute;
+    > label {
+      font-size: 11px;
+    }
+    > label::after {
+      content: '';
+    }
+  }
+}
+
+.buttons {
+  padding-left: 65%;
+  display: flex;
+  justify-content: space-between;
+
+  > :global(.ant-form-item) {
+    margin-bottom: 0;
+  }
+
+  :global(.ant-btn-text) {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  button {
+    color: #9e9e9e;
+  }
+  button[type='submit'] {
+    color: #6ed091;
+  }
+}
