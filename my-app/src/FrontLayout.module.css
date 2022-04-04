@@ -1,0 +1,33 @@
+.layout {
+  padding: 96px 175px;
+}
+
+:global(.ant-layout-header) {
+  background: none;
+  height: initial;
+  padding: 0;
+  font-size: 25px;
+  font-weight: 200;
+  display: flex;
+  justify-content: space-between;
+  height: 112px;
+  line-height: 112px;
+}
+
+:global(.ant-btn) {
+  padding: 2px 6px;
+  align-self: center;
+  background-color: #6ed091;
+  height: initial;
+  border-radius: 4px;
+}
+
+:global(.ant-btn:hover) {
+  background-color: #6ed091;
+}
+
+:global(.ant-btn > span) {
+  font-size: 10px;
+  color: white;
+  font-weight: 800;
+}
