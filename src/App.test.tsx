@@ -14,12 +14,12 @@ describe('Integration test', () => {
 
     expect(modal).toBeVisible();
 
-    const destinationInput = screen.getByPlaceholderText(/nom de la destination/i);
-    const adressInput = screen.getByPlaceholderText(/Adress/i);
-    const nbResidentInput = screen.getByPlaceholderText(/Nb Habitants/i);
-    const nbHotelInput = screen.getByPlaceholderText(/Nb Hôtel/i);
-    const nbSalaryMoyInput = screen.getByPlaceholderText(/Revenu Moy/i);
-    const nbSurfaceInput = screen.getByPlaceholderText(/Superficie/i);
+    const destinationInput = screen.getByTestId('modalCityName');
+    const adressInput = screen.getByTestId('modalCityAdress');
+    const nbResidentInput = screen.getByTestId('modalNbResident');
+    const nbHotelInput = screen.getByTestId('modalNbHotel');
+    const nbSalaryMoyInput = screen.getByTestId('modalNbSalaryMoy');
+    const nbSurfaceInput = screen.getByTestId('modalNbSurface');
 
     const expectedDestination = "Paris";
     userEvent.type(destinationInput, expectedDestination);

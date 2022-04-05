@@ -8,6 +8,16 @@ import {
   Switch,
 } from 'antd';
 
+interface Destination {
+    nbHotel: number;
+    nbResident: number;
+    nbSalaryMoy: number;
+    nbSurface: number;
+    activated: boolean;
+    address: string;
+    imageLink: string;
+    name: string;
+}
 interface Props {
   isModalVisible: boolean;
   setIsModalVisible: (isVisible: boolean) => void;
@@ -21,7 +31,7 @@ const CityModal = ({
   const [form] = Form.useForm();
   const { destinations, setDestinations } = useDestinationsContext();
 
-  const handleSubmit = (values: any ) => {
+  const handleSubmit = (values: Destination ) => {
     setDestinations([...destinations, values])
     setIsModalVisible(false);
     onReset()
@@ -51,7 +61,7 @@ const CityModal = ({
             message: 'Le nom de la destination ne peut pas être vide',
             whitespace: true
           }]}>
-          <Input placeholder="Nom de la destination" />
+          <Input placeholder="Nom de la destination" data-testid="modalCityName"/>
         </Form.Item>
 
         <Form.Item 
@@ -60,14 +70,14 @@ const CityModal = ({
             required: true,
             message: 'L\'adress ne peut pas être vide'
           }]}>
-          <Input placeholder="Adress" autoFocus/>
+          <Input placeholder="Adress"  data-testid="modalCityAdress" autoFocus/>
         </Form.Item>
 
         <Form.Item 
           name="imageLink" 
           initialValue={''}
           rules={[{ type: 'url'}]}>
-          <Input placeholder="Lien de l'image"/>
+          <Input placeholder="Lien de l'image"  data-testid="modalCityLink"/>
         </Form.Item>
 
         <div className={styles.numberInput}>
@@ -78,7 +88,7 @@ const CityModal = ({
               pattern: /^([1-9]\d*\.?\d*)|(0\.\d*[1-9])/,
               message: 'Veuillez entrer un chiffre'
             }]}>
-            <Input placeholder="Nb Habitants"/>
+            <Input placeholder="Nb Habitants" data-testid="modalNbResident"/>
           </Form.Item>
 
           <Form.Item 
@@ -88,7 +98,7 @@ const CityModal = ({
             pattern: /^([1-9]\d*\.?\d*)|(0\.\d*[1-9])/,
             message: 'Veuillez entrer un chiffre'
           }]}>
-            <Input placeholder="Nb Hôtels"/>
+            <Input placeholder="Nb Hôtels" data-testid="modalNbHotel"/>
           </Form.Item>
 
           <Form.Item 
@@ -98,7 +108,7 @@ const CityModal = ({
               pattern: /^([1-9]\d*\.?\d*)|(0\.\d*[1-9])/,
               message: 'Veuillez entrer un chiffre'
             }]}>
-            <Input placeholder="Revenu Moy"/>
+            <Input placeholder="Revenu Moy" data-testid="modalNbSalaryMoy"/>
           </Form.Item>
 
           <Form.Item 
@@ -108,7 +118,7 @@ const CityModal = ({
               pattern: /^([1-9]\d*\.?\d*)|(0\.\d*[1-9])/,
               message: 'Veuillez entrer un chiffre'
             }]}>
-            <Input placeholder="Superficie"/>
+            <Input placeholder="Superficie" data-testid="modalNbSurface"/>
           </Form.Item>
         </div>
         <Form.Item name="activated" label="Activer" initialValue={true} className={styles.switch}>
