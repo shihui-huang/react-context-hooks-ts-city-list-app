@@ -1,6 +1,6 @@
 
 import './App.scss';
-import FrontLayout from './FrontLayout'
+import FrontLayout from './components/FrontLayout'
 
 function App() {
   return (
