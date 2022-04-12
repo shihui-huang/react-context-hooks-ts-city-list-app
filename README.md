@@ -1,7 +1,10 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## City list application
 
+This project is a city list application where you can add cities to the list of destinations.\
+It was written in Typescript and was also tested with @testing-library/react.\
+I Used the React Context and custom hooks to register and retrieve destinations from local storage.\
+And I introduced the design system Ant Design to make it responsive.
 
 ## Preview
 
